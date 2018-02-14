@@ -7,7 +7,7 @@
 degree_time(data, thresholds)
 }
 \arguments{
-\item{data}{data in long format with minimum temperature labeled as tmin and maximum temperature labeled as tmax}
+\item{data}{data in wide format with minimum temperature labeled as tmin and maximum temperature labeled as tmax}
 
 \item{thresholds}{threshold of temperature intervals to calculate time in each degree}
 }

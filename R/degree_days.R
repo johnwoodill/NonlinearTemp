@@ -4,10 +4,8 @@
 #' \code{degree_days} returns a data frame with calculated daily degree days within a specified thresholds.
 #' 
 #' @details 
-#' To generate correct degree days the data passed must be in wide format with minimum temperature 
-#' column labeled as tmin and maximum temperature labeled as tmax. The date column should 
-#' contain daily observations in Date format. The function will automatically sort by date of the 
-#' first observation and generate new columns for each degree day. 
+#' To generate degree days the data must be in wide format with minimum temperature 
+#' column labeled as tmin and maximum temperature labeled as tmax. 
 #' 
 #' Degree days are calcuated from the following cases:
 #' 
@@ -29,9 +27,10 @@
 #' 
 #' Snyder, Richard L. "Hand calculating degree days." Agricultural and forest meteorology 35, no. 1-4 (1985): 353-358.
 #'
-#' Woodill, A. John "United States Temperature Exposure 1900-2013." (2016) http://johnwoodill.blogspot.com/2016/06/us-degree-days-heat-map-interesting.html
+#' Woodill, A. John "United States Temperature Exposure 1900-2013." (2016) 
+#' http://johnwoodill.blogspot.com/2016/06/us-degree-days-heat-map-interesting.html
 #'
-#' @param data data in long format with minimum temperature labeled as tmin and maximum temperature labeled as tmax
+#' @param data data in wide format with minimum temperature labeled as tmin and maximum temperature labeled as tmax
 #'
 #' @param thresholds threshold of temperature intervals to calculate degree days
 #'

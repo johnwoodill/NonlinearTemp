@@ -1,10 +1,12 @@
 Package: NonlinearTemp
-Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: Calculate daily degree days and time in each degree
+Version: 0.1
 Date: 2018-02-14
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: A. John Woodill 
+Maintainer: A. John Woodill <johnwoodill@gmail.com>
+Description: NonlinearTemp calculates nonlinear temperature distributions using an integrated sine technique. Degree days define time above a specified temperature threshold (e.g. degree days above 30C) and time in each degree define time within a specified temperature threshold (e.g. time in 30C).
+License: MIT + file LICENSE
 RoxygenNote: 6.0.1
+URL: https://github.com/johnwoodill/NonlinearTemp
+BugReports: https://github.com/johnwoodill/NonlinearTemp/issues
+Depends: R (>= 3.1)

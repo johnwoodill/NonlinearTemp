@@ -7,7 +7,7 @@
 degree_days(data, thresholds)
 }
 \arguments{
-\item{data}{data in long format with minimum temperature labeled as tmin and maximum temperature labeled as tmax}
+\item{data}{data in wide format with minimum temperature labeled as tmin and maximum temperature labeled as tmax}
 
 \item{thresholds}{threshold of temperature intervals to calculate degree days}
 }
@@ -15,10 +15,8 @@ degree_days(data, thresholds)
 \code{degree_days} returns a data frame with calculated daily degree days within a specified thresholds.
 }
 \details{
-To generate correct degree days the data passed must be in wide format with minimum temperature 
-column labeled as tmin and maximum temperature labeled as tmax. The date column should 
-contain daily observations in Date format. The function will automatically sort by date of the 
-first observation and generate new columns for each degree day. 
+To generate degree days the data must be in wide format with minimum temperature 
+column labeled as tmin and maximum temperature labeled as tmax. 
 
 Degree days are calcuated from the following cases:
 
@@ -28,7 +26,7 @@ dday = (tmax - tmin/2) - threshold
 
 (2) Minimum temperature < Threshold < Maximum Temperature
 
-dday = [ W integral_{theta}^{pi/2} sin(t)dt - integral_{\theta}^{\pi/2} (threshold - tmin)dt ] / pi
+dday = ( W integral_{theta}^{pi/2} sin(t)dt - integral_{theta}^{pi/2} (threshold - tmin)dt ) / pi
 
 W = (tmax - tmin)/2
 
@@ -43,5 +41,6 @@ degree_days(napa, thresholds = c(0:35))
 \references{
 Snyder, Richard L. "Hand calculating degree days." Agricultural and forest meteorology 35, no. 1-4 (1985): 353-358.
 
-Woodill, A. John "United States Temperature Exposure 1900-2013." (2016) http://johnwoodill.blogspot.com/2016/06/us-degree-days-heat-map-interesting.html
+Woodill, A. John "United States Temperature Exposure 1900-2013." (2016) 
+http://johnwoodill.blogspot.com/2016/06/us-degree-days-heat-map-interesting.html
 }
