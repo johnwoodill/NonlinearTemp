@@ -17,7 +17,7 @@
 #' 
 #' (2) Minimum temperature < Threshold < Maximum Temperature
 #' 
-#' dday = [ W integral_{theta}^{pi/2} sin(t)dt - integral_{\theta}^{\pi/2} (threshold - tmin)dt ] / pi
+#' dday = ( W integral_{theta}^{pi/2} sin(t)dt - integral_{theta}^{pi/2} (threshold - tmin)dt ) / pi
 #' 
 #' W = (tmax - tmin)/2
 #' 
