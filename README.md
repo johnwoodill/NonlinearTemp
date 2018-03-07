@@ -1,4 +1,4 @@
-## NonlinearTemp
+## nonlineartempr
 
 
 ![](https://img.shields.io/build/passing.png?color=brightgreen)
@@ -8,7 +8,7 @@
 
 Overview
 --------
-NonlinearTemp calculates nonlinear temperature distributions using an integrated sine technique. Degree days define time above a specified temperature threshold (e.g. degree days above 30C) and time in each degree define time within a specified temperature threshold (e.g. time in 30C).
+`nonlineartempr` calculates nonlinear temperature distributions using an integrated sine technique. Degree days define time above a specified temperature threshold (e.g. degree days above 30C) and time in each degree define time within a specified temperature threshold (e.g. time in 30C).
 
 -   `degree_days()`: calculates degree days within a specified thresholds
 -   `degree_time()`: calculates time in each degree at one degree intervals within a specified thresholds.
@@ -20,13 +20,15 @@ Installation
 # Install through devtools:install_github()
 
 # install.packages("devtools")
-devtools::install_github("johnwoodill/NonlinearTemp")
+devtools::install_github("johnwoodill/nonlineartempr")
 ```
 
 Usage
 -----
 
 ``` r
+# library(nonlineartempr)
+
 # Load Napa County, CA data
 data(napa)
 
