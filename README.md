@@ -27,7 +27,7 @@ Usage
 -----
 
 ``` r
-# library(nonlineartempr)
+library(nonlineartempr)
 
 # Load Napa County, CA data
 data(napa)
