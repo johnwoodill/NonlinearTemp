@@ -17,43 +17,52 @@
 
 degree_time <- function(data, thresholds){
   
-  # Assign return data
-  retdat <- data
+  # Check for tmin and tmax columns
+  name_check <- names(data)
+  check <- ifelse(any(name_check == 'tmax') & any(name_check == 'tmin'), 1, 0)
   
-  # ncols to add
-  nc <- ncol(retdat)
+  if(check != 1) {
+    warning("data.frame does not contain tmax or tmin. Please provide data.frame with these columns.")
+  } else {
   
-  # Loop through each threshold
-  for (i in 1:length(thresholds)){
+    # Assign return data
+    retdat <- data
     
-    # Insert new column
-    col <- paste0("tdegree", thresholds[i], "C")
-    cadd <- i + nc
-    b <- thresholds[i]
-    retdat[, cadd] <- 0
+    # ncols to add
+    nc <- ncol(retdat)
     
-    # Intervals between +- 0.5
-    n   =  length(retdat$tmin)
-    t0  =  rep(thresholds[i] - 0.5, n)
-    t1  =  rep(thresholds[i] + 0.5, n)
-    
-    # Calculate time in each degree
-    t0[t0 < retdat$tmin]  =  retdat$tmin[t0 < retdat$tmin]
-    t1[t1 > retdat$tmax]  =  retdat$tmax[t1 > retdat$tmax]
-    # Suppressing message because produces NA, which are ignored
-    retdat[, cadd] <- suppressWarnings((2/pi) * (asin((t1 - retdat$tmin)/(retdat$tmax - retdat$tmin)) - 
-                                asin((t0 - retdat$tmin)/(retdat$tmax - retdat$tmin))))
-    
-    # If NA or less than zero, recode to zero
-    retdat[, cadd] <- ifelse(is.na(retdat[, cadd]), 0, retdat[, cadd])
-    retdat[, cadd] <- ifelse(retdat[, cadd] < 0 , 0, retdat[, cadd])
-    
-    # Round time in each degree
-    retdat[, cadd] <- round(retdat[,cadd], 5)
-    
-    # Rename column
-    colnames(retdat)[cadd] <- col
-  }
+    # Loop through each threshold
+    for (i in 1:length(thresholds)){
+      
+      # Insert new column
+      col <- paste0("tdegree", thresholds[i], "C")
+      cadd <- i + nc
+      b <- thresholds[i]
+      retdat[, cadd] <- 0
+      
+      # Intervals between +- 0.5
+      n   =  length(retdat$tmin)
+      t0  =  rep(thresholds[i] - 0.5, n)
+      t1  =  rep(thresholds[i] + 0.5, n)
+      
+      # Calculate time in each degree
+      t0[t0 < retdat$tmin]  =  retdat$tmin[t0 < retdat$tmin]
+      t1[t1 > retdat$tmax]  =  retdat$tmax[t1 > retdat$tmax]
+      # Suppressing message because produces NA, which are ignored
+      retdat[, cadd] <- suppressWarnings((2/pi) * (asin((t1 - retdat$tmin)/(retdat$tmax - retdat$tmin)) - 
+                                  asin((t0 - retdat$tmin)/(retdat$tmax - retdat$tmin))))
+      
+      # If NA or less than zero, recode to zero
+      retdat[, cadd] <- ifelse(is.na(retdat[, cadd]), 0, retdat[, cadd])
+      retdat[, cadd] <- ifelse(retdat[, cadd] < 0 , 0, retdat[, cadd])
+      
+      # Round time in each degree
+      retdat[, cadd] <- round(retdat[,cadd], 5)
+      
+      # Rename column
+      colnames(retdat)[cadd] <- col
+      }
   return(retdat)
+  }
 }
   
