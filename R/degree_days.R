@@ -47,7 +47,7 @@ degree_days <- function(data, thresholds){
   if(check != 1) {
     warning("data.frame does not contain tmax or tmin. Please provide data.frame with these columns.")
   } else {
-    retdat <- data
+    retdat <- as.data.frame(data)
     
     #Order by date
     retdat <- retdat[order(as.Date(retdat$date)), ]

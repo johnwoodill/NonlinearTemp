@@ -26,7 +26,7 @@ degree_time <- function(data, thresholds){
   } else {
   
     # Assign return data
-    retdat <- data
+    retdat <- as.data.frame(data)
     
     # ncols to add
     nc <- ncol(retdat)
