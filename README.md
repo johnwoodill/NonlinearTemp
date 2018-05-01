@@ -1,8 +1,8 @@
 ## nonlineartempr
 
-
-![](https://img.shields.io/R/v3.4.3.png?color=red)
-![](https://img.shields.io/license/MIT.png?color=blue)
+https://travis-ci.org/johnwoodill/nonlineartempr.svg?branch=master
+# ![](https://img.shields.io/R/v3.4.3.png?color=red)
+# ![](https://img.shields.io/license/MIT.png?color=blue)
 
 
 Overview
