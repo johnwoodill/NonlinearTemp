@@ -1,7 +1,6 @@
 ## nonlineartempr
 
 
-![](https://img.shields.io/build/passing.png?color=brightgreen)
 ![](https://img.shields.io/R/v3.4.3.png?color=red)
 ![](https://img.shields.io/license/MIT.png?color=blue)
 
