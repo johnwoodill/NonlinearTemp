@@ -2,10 +2,10 @@
 \alias{napa}
 \docType{data}
 \title{
-%%   ~~ data name/kind ... ~~
+Napa, CA daily data
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of the dataset. ~~
+A dataset containing daily min and max temperature to calculate degree days and time in each degree.
 }
 \usage{data("napa")}
 \format{
@@ -23,15 +23,6 @@
     \item{\code{tmax}}{a numeric vector}
     \item{\code{tmin}}{a numeric vector}
   }
-}
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
-\references{
-%%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
 data(napa)
